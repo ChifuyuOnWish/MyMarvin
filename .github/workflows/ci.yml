@@ -11,6 +11,8 @@ on:
 jobs:
   start_jenkins:
     runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
     steps:
       - name: Checkout
         uses: actions/checkout@v4
