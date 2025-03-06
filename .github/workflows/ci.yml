@@ -39,6 +39,7 @@ jobs:
             echo "❌ Found errors in Jenkins logs!"
             exit 1
           fi
+          docker logs myBsMarvin
           echo "✅ No critical errors found."
 
       - name: Push to mirror
