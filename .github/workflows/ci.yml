@@ -23,7 +23,7 @@ jobs:
       - name: Wait for Jenkins to start
         run: |
           for i in {1..30}; do
-            if docker -f logs myBsMarvin 2>&1 | grep -q "Jenkins is fully up and running"; then
+            if docker logs myBsMarvin | grep -q "Jenkins is fully up and running"; then
               echo "✅ Jenkins is up!"
               exit 0
             fi
