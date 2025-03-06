@@ -1,0 +1,17 @@
+jenkins:
+  systemMessage: "Hello! Welcome to my Jenkins instance :)"
+  authorizationStrategy: loggedInUsersCanDoAnything
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+          name: "Administrator"
+
+        - id: "jigglypuff"
+          password: "jigglypuff"
+          name: "Jigglypuff"
+
+jobs:
+  - file: "/var/jenkins_home/casc_configs/job_dsl.groovy"
