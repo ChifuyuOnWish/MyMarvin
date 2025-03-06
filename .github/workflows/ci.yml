@@ -23,7 +23,7 @@ jobs:
       - name: Wait for Jenkins to start
         run: |
           for i in {1..30}; do
-            if docker logs myMarvin_container 2>&1 | grep -q "Jenkins is fully up and running"; then
+            if docker logs myBsMarvin 2>&1 | grep -q "Jenkins is fully up and running"; then
               echo "✅ Jenkins is up!"
               exit 0
             fi
@@ -35,7 +35,7 @@ jobs:
 
       - name: Check for errors in logs
         run: |
-          if docker logs myMarvin_container 2>&1 | grep -iE "SEVERE|FATAL|ERROR"; then
+          if docker logs myBsMarvin 2>&1 | grep -iE "SEVERE|FATAL|ERROR"; then
             echo "❌ Found errors in Jenkins logs!"
             exit 1
           fi
